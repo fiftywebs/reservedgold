@@ -15,7 +15,7 @@ return array(
                 'options' => array(
                     'route'    => '/',
                     'defaults' => array(
-                        'controller' => 'Application\Controller\Index',
+                        'controller' => 'Exchanger\Controller\Index',
                         'action'     => 'index',
                     ),
                 ),
@@ -73,7 +73,8 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
+            'Application\Controller\Index' => 'Application\Controller\IndexController',
+            'Exchanger\Controller\Index' => 'Exchanger\Controller\IndexController',
         ),
     ),
     'view_manager' => array(

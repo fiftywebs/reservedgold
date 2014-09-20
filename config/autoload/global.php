@@ -12,5 +12,18 @@
  */
 
 return array(
-    // ...
+    'db' => array(
+		'driver' => 'Pdo',
+		'dsn' => 'mysql:host=localhost;dbname=rg',
+		'username' => 'root',
+		'password' => '121212',
+		'driver_option' => array(
+			PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\'',
+		),
+	),
+	'service_manager' => array(
+		'factories' => array(
+			'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory',
+		),
+	),
 );

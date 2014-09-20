@@ -1,0 +1,49 @@
+<div class="row">
+	<div class="col-lg-7">
+		<div class="well bs-component">
+			<?php
+				$form = $this->form;
+				$form->prepare();
+				$form->setAttribute('method', 'post');
+				$form->setAttribute('action', $this->url('application/user', array('action' => 'register')));
+				$form->setAttribute('class', 'form-horizontal');
+				echo $this->form()->openTag($form);
+			?>
+			<legend>New User SignUp</legend>
+				<fieldset class="zend_form">
+					<div class="form-group col-lg-12">
+						<label class="col-lg-4 control-label"><?=$this->formLabel($form->get('name'))?></label>
+						<div class="input-group">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span><?=$this->formElement($form->get('name'))?><?=$this->formElementErrors($form->get('name'))?>
+						</div>
+						<div class="col-lg-4"></div><div class="col-lg-8"><?=$this->formElementErrors($form->get('name'))?></div>
+					</div>
+					<div class="form-group col-lg-12">
+						<label class="col-lg-4 control-label"><?=$this->formLabel($form->get('email'))?></label>
+						<div class="input-group">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span><?=$this->formElement($form->get('email'))?>
+						</div>
+						<div class="col-lg-4"></div><div class="col-lg-8"><?=$this->formElementErrors($form->get('email'))?></div>
+					</div>
+					<div class="form-group col-lg-12">
+						<label class="col-lg-4 control-label"><?=$this->formLabel($form->get('password'))?></label>
+						<div class="input-group">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span><?=$this->formElement($form->get('password'))?>
+						</div>
+						<div class="col-lg-4"></div><div class="col-lg-8"><?=$this->formElementErrors($form->get('password'))?></div>
+					</div>
+					<div class="form-group col-lg-12">
+						<label class="col-lg-4 control-label"><?=$this->formLabel($form->get('confirm_password'))?></label>
+						<div class="input-group">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span><?=$this->formElement($form->get('confirm_password'))?>
+						</div>
+						<div class="col-lg-4"></div><div class="col-lg-8"><?=$this->formElementErrors($form->get('confirm_password'))?></div>
+					</div>
+					<div class="form-group col-lg-12 pull-right">
+						<?=$this->formElement($form->get('submit'))?><?=$this->formElementErrors($form->get('submit'))?>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</div>
