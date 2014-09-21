@@ -1,9 +1,9 @@
 <?php
-    namespace Application\Form;
+    namespace Exchanger\Form;
 	
 	use Zend\InputFilter\InputFilter;
 	
-	class RegisterFilter extends InputFilter {
+	class FormFilter extends InputFilter {
 		
 		public function __construct()
 		{

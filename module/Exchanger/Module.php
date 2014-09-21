@@ -18,16 +18,13 @@ use Zend\Db\TableGateway\TableGateway;
 use Exchanger\Model\Product;
 use Exchanger\Model\ProductTable;
 
-use Exchanger\Model\User;
-use Exchanger\Model\UserTable;
+use UserPanel\Model\User;
+use UserPanel\Model\UserTable;
 use Exchanger\Model\Order;
 use Exchanger\Model\OrderTable;
 
-use Exchanger\Form\RegisterForm;
-use Exchanger\Form\RegisterFilter;
-
-use Exchanger\Form\LoginForm;
-use Exchanger\Form\LoginFilter;
+use Exchanger\Form\FormFields;
+use Exchanger\Form\FormFilter;
 
 use Zend\Authentication\AuthenticationService;
 use Zend\Authentication\Adapter\DbTable as DbTableAuthAdapter;
@@ -100,12 +97,12 @@ class Module
 					return new Order();
 				},
 				'Form' => function($sm) {
-					$form = new RegisterForm();
-					$form->setInputFilter($sm->get('RegisterFilter'));
+					$form = new FormFields();
+					$form->setInputFilter($sm->get('FormFilter'));
 					return $form;
 				},
 				'FormFilter' => function($sm) {
-					return new RegisterFilter();
+					return new FormFilter();
 				},
 				'AuthService' => function($sm) {
 					$dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');

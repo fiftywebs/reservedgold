@@ -1,15 +1,21 @@
 <?php
-    namespace Application\Form;
+    namespace Exchanger\Form;
 	
 	use Zend\Form\Form;
 	
-	class RegisterForm extends Form {
+	class FormFields extends Form {
 		
 		public function __construct($name = null)
 		{
 			parent::__construct('Register');
 			$this->setAttribute('method', 'post');
 			
+			$this->add(array(
+				'name' => 'id',
+				'attributes' => array(
+					'type' => 'hidden',
+				),
+			));
 			$this->add(array(
 				'name' => 'name',
 				'required' => 'required',
